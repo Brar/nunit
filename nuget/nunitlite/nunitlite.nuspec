@@ -15,7 +15,7 @@
 
 Supported platforms:
 - .NET Framework 2.0+
-- .NET Standard 1.6+
+- .NET Standard 1.4+
 - .NET Core
 
 How to use this package:
@@ -38,6 +38,11 @@ How to use this package:
       </group>
       <group targetFramework="net45">
         <dependency id="NUnit" version="[$version$]" />
+      </group>
+      <group targetFramework="netstandard1.4">
+        <dependency id="NUnit" version="[$version$]" />
+        <dependency id="NETStandard.Library" version="1.6.1" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.5.0" />
       </group>
       <group targetFramework="netstandard1.6">
         <dependency id="NUnit" version="[$version$]" />

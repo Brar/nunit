@@ -21,13 +21,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
+#if PARALLEL
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
 namespace NUnit.Framework.Internal.Execution
 {
-#if !NETSTANDARD1_6
     /// <summary>
     /// SimpleWorkItemDispatcher handles execution of WorkItems by
     /// directly executing them. It is provided so that a dispatcher
@@ -42,7 +42,7 @@ namespace NUnit.Framework.Internal.Execution
         // Thread used to run and cancel tests
         private Thread _runnerThread;
 
-        #region IWorkItemDispatcher Members
+    #region IWorkItemDispatcher Members
 
         /// <summary>
         ///  The level of parallelism supported
@@ -105,7 +105,7 @@ namespace NUnit.Framework.Internal.Execution
                 }
             }
         }
-        #endregion
+    #endregion
     }
-#endif
 }
+#endif

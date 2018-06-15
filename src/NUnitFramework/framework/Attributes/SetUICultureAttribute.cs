@@ -21,7 +21,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // ***********************************************************************
 
-#if !NETSTANDARD1_6
+#if !(NETSTANDARD1_4 || NETSTANDARD1_6)
 using System;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
@@ -50,14 +50,14 @@ namespace NUnit.Framework
             _culture = culture;
         }
 
-        #region IApplyToContext Members
+#region IApplyToContext Members
 
         void IApplyToContext.ApplyToContext(TestExecutionContext context)
         {
             context.CurrentUICulture = new System.Globalization.CultureInfo(_culture, false);
         }
 
-        #endregion
+#endregion
     }
 }
 #endif
